@@ -1,0 +1,182 @@
+// _layout.scss
+
+.header {
+    background-color: #f7f6f4;
+    overflow: auto;
+}
+
+.row {
+    text-rendering: optimizespeed;
+    display: flex;
+	flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+.content-box {
+	padding: 1em 2em;
+}
+
+.input-column {
+	background-color: $main-bg-color;
+}
+
+.output-column {
+	background-color: $main-bg-color-lighter;
+}
+
+.input-column, .output-column {
+	width: 100%;
+    display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(md) { width: 50%; }
+}
+
+.check-box-options {
+	width: 100%;
+	display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(sm) { width: 50%; }
+}
+
+#writing-check-output {
+	padding: 0 1em;
+	p {
+		margin: 1.4em 0;
+	}
+}
+
+.writing-check-input {
+	min-height: 200px;
+	white-space: pre-wrap;
+	padding: 1em;
+	background-color: #F7F6F4;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+	@include breakpoint(md) { min-height: 400px; }
+}
+
+.definitions-list, .author-copy {
+	width: 100%;
+	display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(md) { width: 33.3333%; }
+}
+
+.definitions-list .content-box {
+	padding: 0;
+}
+
+.definitions-list ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.definitions-list ul li {
+	padding: 1.3em 2em;
+	cursor: pointer;
+	border-right: 2px solid rgba(0,0,0,0.2);
+}
+
+.definitions-list ul li.active {
+	border-right: none;
+}
+
+.definitions-description, .about-copy {
+	width: 100%;
+	display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+	@include breakpoint(md) { width: 66.6667%; }
+}
+
+.description {
+	display: none;
+}
+
+.description.active {
+	display: block;
+}
+
+.about-copy {
+	background-color: $main-bg-color-lighter;
+}
+
+.author-copy {
+	background-color: $main-bg-color;
+}
+
+/**
+ * Tooltip Styles
+ */
+
+[data-tooltip] {
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+	visibility: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	opacity: 0;
+	pointer-events: none;
+}
+
+[data-tooltip]:before {
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	margin-bottom: 5px;
+	margin-left: -80px;
+	padding: 7px;
+	width: 160px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #000;
+	background-color: hsla(0, 0%, 20%, 0.9);
+	color: #fff;
+	content: attr(data-tooltip);
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+[data-tooltip]:after {
+	position: absolute;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -5px;
+	width: 0;
+	border-top: 5px solid #000;
+	border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	content: " ";
+	font-size: 0;
+	line-height: 0;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+	visibility: visible;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	opacity: 1;
+}

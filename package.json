@@ -1,44 +1,34 @@
 {
-  "name": "joblint",
-  "version": "2.3.2",
-  "description": "Test tech job posts for issues with sexism, culture, expectations, and recruiter fails",
-  "keywords": [
-    "job",
-    "lint"
-  ],
-  "author": "Rowan Manning (http://rowanmanning.com/)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rowanmanning/joblint.git"
-  },
-  "homepage": "https://github.com/rowanmanning/joblint",
-  "bugs": "https://github.com/rowanmanning/joblint/issues",
-  "license": "MIT",
-  "engines": {
-    "node": ">=0.10"
-  },
-  "dependencies": {
-    "chalk": "1.1",
-    "commander": "~2.8",
-    "extend": "~3.0",
-    "pad-component": "0.0.1",
-    "wordwrap": "~1.0"
-  },
-  "devDependencies": {
-    "browserify": "^11",
-    "jscs": "^2",
-    "jshint": "^2",
-    "mocha": "^2",
-    "mockery": "~1.4",
-    "proclaim": "^3",
-    "sinon": "^1",
-    "uglify-js": "^2"
-  },
-  "main": "./lib/joblint.js",
-  "bin": {
-    "joblint": "./bin/joblint.js"
+  "name": "Editsaurus",
+  "version": "1.1.0",
+  "homepage": "http://editsaurus.tylerwalters.com",
+  "author": {
+    "name": "Tyler Walters ",
+    "email": "tyler@tylerwalters.com",
+    "url": "http://tylerwalters.com"
   },
   "scripts": {
-    "test": "make ci"
+    "start": "node index.js",
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-sanitize": "^1.6.1",
+    "express": "^4.14.1",
+    "lodash": "^4.17.4",
+    "purecss": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inline-source": "^3.1.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
   }
 }
